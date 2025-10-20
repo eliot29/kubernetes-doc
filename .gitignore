@@ -1,0 +1,21 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/hotkeys.json
+.obsidian/graph.json
+.obsidian/canvas.json
+.trash/
+.DS_Store
+
+# Plugins data (keep configuration)
+.obsidian/plugins/*/data.json
+
+# Backups
+*.bak
+*~
+
+# Temporary files
+*.tmp
+.~lock*
