@@ -1,15 +1,14 @@
-# 🎓 Bienvenue dans la Documentation Kubernetes & Docker
+# 🎓 Documentation Kubernetes - KodeKloud
 
-> Guide complet d'apprentissage des conteneurs et de l'orchestration
+> Notes complètes du cours Kubernetes avec rappels Docker
 
 ## 🗺️ Parcours d'apprentissage
 
 ```mermaid
-graph TD
-    A[🐳 Docker] --> B[☸️ Kubernetes]
-    A --> C[⚙️ Container Runtimes]
-    B --> D[💻 Pratique]
-    C --> B
+graph LR
+    A[🐳 Rappels Docker] --> B[☸️ Kubernetes Core]
+    B --> C[⚙️ Runtimes & CRI]
+    C --> D[💻 Pratique]
     D --> E[🚀 Projets]
 
     style A fill:#2496ed,stroke:#1d7dbe,color:#fff
@@ -19,86 +18,128 @@ graph TD
     style E fill:#ff9800,stroke:#f57c00,color:#fff
 ```
 
-## 📚 Chapitres principaux
+## 📚 Sections principales
 
-### [[01-Docker/00-INDEX|🐳 01 - Docker]]
-**Fondamentaux de la conteneurisation**
-- Comprendre les conteneurs
-- Créer et gérer des images
-- Orchestrer avec Docker Compose
-- Réseau et stockage persistant
+### [[00-Rappels-Docker/00-INDEX|🐳 00 - Rappels Docker]]
+**Les fondamentaux de la conteneurisation**
 
-### [[02-Kubernetes/00-INDEX|☸️ 02 - Kubernetes]]
-**Orchestration de conteneurs à grande échelle**
-- Architecture Kubernetes
-- Déploiement d'applications
-- Services et réseau
-- Scalabilité et haute disponibilité
+Section de rappel pour comprendre Docker avant d'attaquer Kubernetes :
+- Introduction et concepts
+- Commandes essentielles
+- Images et Dockerfile
+- Volumes et réseaux
+- Docker Compose
 
-### [[03-Container-Runtimes/00-INDEX|⚙️ 03 - Container Runtimes]]
-**Comprendre l'écosystème sous-jacent**
-- containerd, CRI-O, runc
-- Interface CRI (Container Runtime Interface)
-- Architecture complète des runtimes
-
-### [[04-Pratique/00-INDEX|💻 04 - Pratique]]
-**Exercices hands-on et labs**
-
-### [[05-Projets/00-INDEX|🚀 05 - Projets]]
-**Applications réelles et cas d'usage**
-
-### [[06-YAML-Examples/00-INDEX|📝 06 - YAML Examples]]
-**Bibliothèque de manifests**
-
-## 🎯 Comment utiliser cette documentation ?
-
-### Pour les débutants
-1. Commencez par [[01-Docker/01-Introduction/01-Qu-est-ce-que-Docker|Docker - Introduction]]
-2. Suivez le parcours dans l'ordre
-3. Pratiquez avec les exercices du chapitre [[04-Pratique/00-INDEX|Pratique]]
-
-### Pour les utilisateurs intermédiaires
-1. Révisez Docker si nécessaire
-2. Plongez directement dans [[02-Kubernetes/00-INDEX|Kubernetes]]
-3. Explorez [[03-Container-Runtimes/00-INDEX|Container Runtimes]] pour approfondir
-
-### Pour les experts
-- Utilisez cette doc comme référence
-- Consultez [[06-YAML-Examples/00-INDEX|YAML Examples]] pour des templates
-- Contribuez à [[05-Projets/00-INDEX|Projets]] avec vos cas d'usage
-
-## 🔧 Outils et prérequis
-
-### Installation requise
-- Docker Desktop / Docker Engine
-- kubectl (client Kubernetes)
-- Minikube ou Kind (pour environnement local)
-
-### Outils recommandés
-- Obsidian (pour visualiser cette documentation)
-- VS Code avec extensions Docker et Kubernetes
-- Terminal avec autocomplétion bash/zsh
-
-## 📖 Ressources externes
-
-- [KodeKloud - Cours Docker](https://kodekloud.com/courses/docker-for-the-absolute-beginner/)
-- [KodeKloud - Cours Kubernetes](https://kodekloud.com/courses/kubernetes-for-the-absolute-beginners/)
-- [Documentation officielle Docker](https://docs.docker.com/)
-- [Documentation officielle Kubernetes](https://kubernetes.io/docs/)
-
-## 🤓 Progression
-
-Créez votre propre suivi de progression en créant une note personnelle !
-
-```markdown
-## Ma progression
-- [ ] Docker - Introduction
-- [ ] Docker - Commandes
-- [ ] Docker - Images
-- [ ] Kubernetes - Concepts
-- [ ] ...
-```
+**→ Commencer ici si vous débutez avec les conteneurs**
 
 ---
 
-**Prêt à commencer ? Direction [[01-Docker/00-INDEX|Docker]] ! 🚀**
+### [[01-Kubernetes-Core/00-INDEX|☸️ 01 - Kubernetes Core]]
+**Le cœur de Kubernetes**
+
+Apprentissage complet de Kubernetes :
+- Architecture et composants
+- Pods, Deployments, Services
+- Configuration (ConfigMaps, Secrets)
+- Networking et Storage
+- Déploiements avancés
+
+**→ Section principale du cours**
+
+---
+
+### [[02-Runtimes-et-CRI/00-INDEX|⚙️ 02 - Runtimes & CRI]]
+**Comprendre l'écosystème sous-jacent**
+
+Plongée technique dans les runtimes de conteneurs :
+- containerd, CRI-O, runc
+- Interface CRI (Container Runtime Interface)
+- Architecture complète
+- Docker vs containerd
+
+**→ Pour comprendre ce qui se passe "sous le capot"**
+
+---
+
+### [[03-YAML-et-Manifests/00-INDEX|📝 03 - YAML & Manifests]]
+**Bibliothèque de manifests réutilisables**
+
+Templates et exemples pour vos déploiements :
+- Pods, Deployments, Services
+- ConfigMaps, Secrets
+- Ingress, PersistentVolumes
+- Docker Compose
+
+---
+
+### [[04-Exercices-Pratiques/00-INDEX|💻 04 - Exercices Pratiques]]
+**Hands-on labs et exercices**
+
+Mettez en pratique vos connaissances :
+- Exercices Docker
+- Exercices Kubernetes
+- Labs KodeKloud
+
+---
+
+### [[05-Projets-Complets/00-INDEX|🚀 05 - Projets Complets]]
+**Applications réelles**
+
+Projets de A à Z :
+- Applications microservices
+- CI/CD avec Kubernetes
+- Monitoring et observabilité
+
+---
+
+### [[06-Annexes/00-INDEX|📖 06 - Annexes]]
+**Références et aide**
+
+- Commandes utiles (cheatsheet)
+- Troubleshooting
+- Glossaire
+
+---
+
+## 🎯 Comment utiliser cette documentation ?
+
+### 🟢 Débutant complet
+1. Commencez par [[00-Rappels-Docker/00-INDEX|Rappels Docker]]
+2. Pratiquez les exercices Docker
+3. Passez à [[01-Kubernetes-Core/00-INDEX|Kubernetes Core]]
+4. Explorez [[02-Runtimes-et-CRI/00-INDEX|Runtimes & CRI]] pour approfondir
+
+### 🟡 Vous connaissez Docker
+1. Survolez [[00-Rappels-Docker/00-INDEX|Rappels Docker]] si besoin
+2. Plongez dans [[01-Kubernetes-Core/00-INDEX|Kubernetes Core]]
+3. Utilisez [[03-YAML-et-Manifests/00-INDEX|YAML & Manifests]] comme référence
+
+### 🟠 Vous connaissez Kubernetes
+- Utilisez cette doc comme référence
+- Explorez [[02-Runtimes-et-CRI/00-INDEX|Runtimes & CRI]] pour la partie avancée
+- Consultez les [[05-Projets-Complets/00-INDEX|Projets]] pour des cas d'usage
+
+---
+
+## 🔧 Environnement de travail
+
+### Prérequis
+- Docker installé
+- kubectl installé
+- Un cluster Kubernetes (minikube, kind, ou cloud)
+
+### Ressources
+- [KodeKloud - Docker Course](https://notes.kodekloud.com/docs/Docker-Training-Course-for-the-Absolute-Beginner/)
+- [KodeKloud - Kubernetes Course](https://notes.kodekloud.com/docs/kubernetes-for-the-absolute-beginners-hands-on-tutorial/)
+- [Documentation Kubernetes](https://kubernetes.io/docs/)
+- [Documentation Docker](https://docs.docker.com/)
+
+---
+
+## 🚀 Par où commencer ?
+
+**Vous êtes prêt ?** Direction la section qui correspond à votre niveau !
+
+→ [[00-Rappels-Docker/00-INDEX|Commencer par Docker]]
+→ [[01-Kubernetes-Core/00-INDEX|Passer directement à Kubernetes]]
+→ [[02-Runtimes-et-CRI/00-INDEX|Comprendre les Runtimes]]
