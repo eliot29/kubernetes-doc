@@ -1,0 +1,95 @@
+# Application full-stack avec Docker Compose
+# Frontend React + Backend Node.js + PostgreSQL + Redis
+
+version: '3.8'
+
+services:
+  # Base de données PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: myapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Cache Redis
+  redis:
+    image: redis:7-alpine
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  # API Backend (Node.js)
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: node_api
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgres://myuser:mypassword@db:5432/myapp
+      REDIS_URL: redis://redis:6379
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+  # Frontend React
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react_frontend
+    environment:
+      REACT_APP_API_URL: http://localhost:3000
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+# Volumes persistants
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+# Réseaux
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

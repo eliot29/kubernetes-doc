@@ -220,11 +220,11 @@ nerdctl run -d nginx
 
 **Différences entre les runtimes :**
 
-| Runtime | Utilisé par | Taille | Compatibilité CRI |
-|---------|------------|--------|------------------|
-| **containerd** | Docker, K8s | ~200 MB | ✅ Oui (plugin) |
-| **CRI-O** | Kubernetes uniquement | ~50 MB | ✅ Oui (natif) |
-| **Docker Engine** | Docker CLI | ~500 MB | ❌ Non (était dockershim) |
+| Runtime           | Utilisé par           | Taille  | Compatibilité CRI        |
+| ----------------- | --------------------- | ------- | ------------------------ |
+| **containerd**    | Docker, K8s           | ~200 MB | ✅ Oui (plugin)           |
+| **CRI-O**         | Kubernetes uniquement | ~50 MB  | ✅ Oui (natif)            |
+| **Docker Engine** | Docker CLI            | ~500 MB | ❌ Non (était dockershim) |
 
 ### 6️⃣ Low-Level Runtimes (OCI)
 ```

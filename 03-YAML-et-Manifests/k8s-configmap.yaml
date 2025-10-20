@@ -1,0 +1,16 @@
+# ConfigMap pour stocker de la configuration
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  # Clé-valeur simple
+  database_url: "postgres://db:5432/myapp"
+  log_level: "info"
+
+  # Configuration multi-lignes
+  app.properties: |
+    name=MyApp
+    version=1.0
+    debug=false
