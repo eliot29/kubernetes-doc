@@ -1,0 +1,60 @@
+# ReplicaSet avec selectors avancés (matchExpressions)
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-replicaset
+  labels:
+    app: web
+spec:
+  replicas: 5
+
+  # Selectors avancés
+  selector:
+    # Égalité simple
+    matchLabels:
+      app: web
+
+    # Expressions avancées
+    matchExpressions:
+    # Le Pod doit avoir environment = dev OU staging
+    - key: environment
+      operator: In
+      values:
+      - dev
+      - staging
+
+    # Le Pod NE doit PAS avoir tier = database
+    - key: tier
+      operator: NotIn
+      values:
+      - database
+
+    # Le Pod doit avoir la label "region" (peu importe la valeur)
+    - key: region
+      operator: Exists
+
+  # Template des Pods
+  template:
+    metadata:
+      labels:
+        app: web
+        environment: dev
+        tier: frontend
+        region: eu-west
+    spec:
+      containers:
+      - name: web
+        image: myapp:1.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: ENVIRONMENT
+          value: "dev"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
