@@ -22,7 +22,21 @@ Explication complète avec :
 
 **À lire pour comprendre comment Kubernetes maintient vos répliques !**
 
-### [[02-Deployments|🚀 Deployments]]
+### [[02-ReplicaSet-YAML-Detaille|📝 ReplicaSet - Structure YAML détaillée]]
+**⭐⭐ Les subtilités du YAML ReplicaSet**
+
+Explication approfondie :
+- Structure YAML complète annotée
+- **Comment matchLabels lie les Pods au ReplicaSet**
+- Pourquoi les labels doivent correspondre
+- Comment le ReplicaSet trouve les Pods
+- **kubectl edit replicaset avec exemples pratiques**
+- **kubectl scale avec exemples détaillés**
+- Erreurs courantes et solutions
+
+**À lire pour maîtriser la création et modification de ReplicaSets !**
+
+### [[03-Deployments|🚀 Deployments]]
 **Le workload le plus utilisé**
 - Qu'est-ce qu'un Deployment
 - Gestion des ReplicaSets
@@ -31,7 +45,7 @@ Explication complète avec :
 - Stratégies de déploiement
 - Commandes kubectl
 
-### [[03-StatefulSets|🎯 StatefulSets]]
+### [[04-StatefulSets|🎯 StatefulSets]]
 **Pour les applications stateful**
 - Différence avec Deployments
 - Identité stable des Pods
@@ -39,21 +53,21 @@ Explication complète avec :
 - Ordre de déploiement
 - Cas d'usage (bases de données)
 
-### [[04-DaemonSets|👥 DaemonSets]]
+### [[05-DaemonSets|👥 DaemonSets]]
 **Un Pod par Node**
 - Qu'est-ce qu'un DaemonSet
 - Cas d'usage (monitoring, logs, réseau)
 - Commandes kubectl
 - Update strategies
 
-### [[05-Jobs|⏱️ Jobs]]
+### [[06-Jobs|⏱️ Jobs]]
 **Tâches ponctuelles**
 - Qu'est-ce qu'un Job
 - Tâches batch
 - Parallélisme
 - Retry et backoff
 
-### [[06-CronJobs|🕐 CronJobs]]
+### [[07-CronJobs|🕐 CronJobs]]
 **Tâches planifiées**
 - Qu'est-ce qu'un CronJob
 - Syntaxe cron
