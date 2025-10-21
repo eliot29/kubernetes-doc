@@ -41,13 +41,23 @@
 - RemoveImage
 - ImageStatus
 
-### [[06-crictl|🔧 crictl - CLI pour CRI]]
-- Installation de crictl
-- Commandes de base
-- Debugging avec crictl
-- Comparaison avec docker CLI
+### [[06-crictl-vs-docker|🐳 crictl vs docker - Comprendre les différences]]
+**Comparaison détaillée**
+- Qu'est-ce que crictl et pourquoi il existe
+- Tableau : Qui utilise quoi et quand
+- Comparaison des commandes
+- Scénarios réels d'utilisation
+- Installation et configuration
 
-### [[07-Plugins-CRI|🔌 Plugins CRI]]
+### [[07-crictl-vs-kubectl|🔄 crictl vs kubectl - Exemples de commandes]]
+**Comprendre les deux niveaux**
+- Différence haut niveau (kubectl) vs bas niveau (crictl)
+- Exemples de commandes côte à côte
+- Quand utiliser quel outil
+- Scénarios concrets de debug
+- Exercice pratique
+
+### [[08-Plugins-CRI|🔌 Plugins CRI]]
 - containerd CRI plugin
 - CRI-O (implémentation native)
 - Autres implémentations
