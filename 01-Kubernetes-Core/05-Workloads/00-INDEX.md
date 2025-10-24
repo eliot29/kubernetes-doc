@@ -37,13 +37,22 @@ Explication approfondie :
 **À lire pour maîtriser la création et modification de ReplicaSets !**
 
 ### [[03-Deployments|🚀 Deployments]]
-**Le workload le plus utilisé**
-- Qu'est-ce qu'un Deployment
-- Gestion des ReplicaSets
-- Rolling updates
-- Rollbacks
-- Stratégies de déploiement
-- Commandes kubectl
+**⭐⭐ Le workload le plus utilisé (90% des cas)**
+
+Explication complète avec :
+- Qu'est-ce qu'un Deployment et pourquoi l'utiliser
+- Relation Deployment → ReplicaSet → Pods avec diagrammes
+- Structure YAML complète annotée
+- **kubectl apply** : créer et mettre à jour déclarativement
+- **kubectl set image** : changer l'image (méthode impérative)
+- **kubectl rollout status** : surveiller la progression
+- **kubectl rollout history** : voir l'historique des révisions
+- **kubectl rollout undo** : rollback vers version précédente
+- Stratégies de déploiement (RollingUpdate vs Recreate)
+- Workflow complet de déploiement v1.0 → v2.0
+- Erreurs courantes et solutions
+
+**À lire absolument pour maîtriser les déploiements dans Kubernetes !**
 
 ### [[04-StatefulSets|🎯 StatefulSets]]
 **Pour les applications stateful**
